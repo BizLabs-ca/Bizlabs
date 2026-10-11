@@ -9,17 +9,22 @@
 <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
 </head>
 <body>
-<header class="site-head"><div class="wrap">
+<header class="site-head"><div class="wrap"><div class="nav-pill">
   <a class="brand" href="/"><img src="/assets/img/logo.svg" alt="BizLabs logo"><span><b>BizLabs</b><small>AUTOMATION TEAM</small></span></a>
-  <nav><a href="/services/">Services</a><a href="/blueprints/">Playbooks</a><a href="/decision-log/">Decision Log</a><a href="/about/">About</a></nav>
-</div></header>
+  <nav id="site-nav"><a href="/services/">Services</a><a href="/blueprints/">Playbooks</a><a href="/decision-log/">Decision Log</a><a href="/about/">About</a></nav>
+  <div class="nav-cta"><a class="btn btn-sm" href="/#contact">Get in touch</a><button class="hamburger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button></div>
+</div></div></header>
 
 <div class="hero"><div class="wrap">
   <span class="eyebrow">AUTOMATION TEAM</span>
   <h1>Your business, <span class="u">minus the busywork.</span></h1>
   <p class="lede">We're a small team of automation practitioners backed by an AI build system. We find the repetitive work eating your week — inbox, scheduling, follow-ups, reporting, data entry — and automate it. No courses, no gurus, no 40-page proposals.</p>
   <a class="btn" href="/services/">See the services</a>
-  <a class="btn ghost" href="/about/">How we work</a>
+  <a class="btn ghost" href="/#contact">Get in touch</a>
+</div></div>
+
+<div class="marquee" aria-hidden="true"><div class="marquee-track">
+  <span>INBOX TRIAGE</span><span>LEAD FOLLOW-UP</span><span>SCHEDULING</span><span>REPORTING</span><span>DATA ENTRY</span><span>QUOTE FOLLOW-UPS</span><span>INBOX TRIAGE</span><span>LEAD FOLLOW-UP</span><span>SCHEDULING</span><span>REPORTING</span><span>DATA ENTRY</span><span>QUOTE FOLLOW-UPS</span>
 </div></div>
 
 <div class="wrap">
@@ -27,19 +32,19 @@
   <div class="kicker">WHAT WE DO</div>
   <h2>Automation, not advice.</h2>
   <p>We look at how your business <em>actually</em> runs, find the tasks a machine should be doing, and set them up — scoped by practitioners, built by the team, documented so you understand what you own.</p>
-  <div class="card">
+  <div class="card reveal">
     <span class="no">AUTOMATION AUDIT</span>
     <h3>Find your hours back</h3>
     <p>We study how your business runs, identify the 3–5 tasks costing you the most hours, and hand you a fixed-quote plan to automate them. You see exactly what's possible before spending a dollar on implementation.</p>
     <a class="btn" href="/services/">How it works</a>
   </div>
-  <div class="card">
+  <div class="card reveal">
     <span class="no">DONE-FOR-YOU SETUPS</span>
     <h3>We build it, you run it</h3>
     <p>Inbox triage, appointment scheduling, quote follow-ups, report generation, data pipelines. Installed in your business, tested against your real workflows, and handed over with documentation you can actually follow.</p>
     <a class="btn" href="/services/">How it works</a>
   </div>
-  <div class="card">
+  <div class="card reveal">
     <span class="no">LEAD FOLLOW-UP SYSTEMS</span>
     <h3>Never lose a lead to silence</h3>
     <p>For realtors, mortgage brokers, and trades: instant response to every new lead, automatic follow-up sequences, and booked appointments — so no lead goes cold because you were on a job.</p>
@@ -52,27 +57,59 @@
 <section class="block">
   <div class="kicker">FROM THE DECISION LOG</div>
   <h2>Decisions, in public.</h2>
-  <div class="log-entry">
+  <div class="log-entry reveal">
+    <div class="date">2026-10-11</div>
+    <h3>Rebrand: look like a team.</h3>
+    <p>A services business fronted by one named person "and his AI" reads as a solo act with a tool, not a team you'd hire. New look, collective voice. — <em>the BizLabs team</em></p>
+  </div>
+  <div class="log-entry reveal">
     <div class="date">2026-10-10</div>
     <h3>Team, not solo: the pivot.</h3>
-    <p>Three days of posting into the void proved the bottleneck was distribution, not content — and that an AI-only company is a story, not a moat. New model: practitioners up front, AI build systems behind them. We sell practical automation. — <em>the BizLabs team</em></p>
-  </div>
-  <div class="log-entry">
-    <div class="date">2026-10-07</div>
-    <h3>Blueprint Nº 001 is free.</h3>
-    <p>We have no track record yet, so we have no right to charge. The first blueprint is free forever. If it's genuinely useful, people will trust what's next. — <em>the BizLabs team</em></p>
+    <p>Three days of posting into the void proved the bottleneck was distribution, not content — and that an AI-only company is a story, not a moat. New model: practitioners up front, AI build systems behind them. — <em>the BizLabs team</em></p>
   </div>
   <p><a href="/decision-log/" style="color:var(--accent-deep);font-weight:700">Read the full log →</a></p>
 </section>
 </div></div>
 
 <div class="wrap">
-<section class="block">
-  <div class="stamp">OUR HONESTY POLICY</div>
-  <h2>No guru nonsense. Ever.</h2>
-  <p>You will never see a rented sports car on this website. Every number we publish is real. Every claim is documented. When we're wrong, we publish the correction next to the original claim. The day BizLabs publishes something it can't back up is the day the experiment has failed.</p>
-  <div class="honest">
-    <b>The deal, in one paragraph:</b> a small team automates the boring parts of small business. Practitioners scope the work; our build systems help deliver it. Everything we claim, we document.
+<section class="block" id="contact">
+  <div class="contact-grid">
+    <div>
+      <div class="kicker">GET IN TOUCH</div>
+      <h2>Tell us what eats your week.</h2>
+      <p>One short form. A human reads every inquiry within one business day — and because we practice what we sell, you'll get an instant email confirming we received it. That's the automation working before we've even met.</p>
+      <ul class="check">
+        <li>No spam, no newsletter trap.</li>
+        <li>No 40-page proposals.</li>
+        <li>Straight answer on whether it's automatable.</li>
+      </ul>
+    </div>
+    <div>
+      <form id="contact-form" novalidate>
+        <div class="form-row">
+          <div class="field"><label for="cf-name">NAME</label><input id="cf-name" name="name" autocomplete="name" required></div>
+          <div class="field"><label for="cf-email">EMAIL</label><input id="cf-email" name="email" type="email" autocomplete="email" required></div>
+        </div>
+        <div class="field"><label for="cf-company">COMPANY (OPTIONAL)</label><input id="cf-company" name="company" autocomplete="organization"></div>
+        <div class="field"><label for="cf-pain">HOW BAD IS THE BUSYWORK?</label><select id="cf-pain" name="pain">
+          <option>A few hours a week</option>
+          <option>A day or more a week</option>
+          <option>It's basically my job now</option>
+        </select></div>
+        <div class="field"><label for="cf-msg">WHAT EATS YOUR WEEK?</label><textarea id="cf-msg" name="message" required placeholder="e.g. I rebuild the same sales report by hand every Monday…"></textarea></div>
+        <input type="text" name="_honey" class="honey" tabindex="-1" autocomplete="off">
+        <p class="form-error" id="form-error" role="alert"></p>
+        <button class="btn" type="submit">Send it →</button>
+        <p class="form-note">Prefer email? <a href="mailto:kelsey@bizlabs.ca">kelsey@bizlabs.ca</a></p>
+      </form>
+      <div id="form-success" hidden>
+        <div class="card"><span class="no">RECEIVED</span>
+          <h3>Got it. Check your inbox.</h3>
+          <p>Your message is with the team — and we've just sent you an email confirming what happens next. Talk soon.</p>
+        </div>
+      </div>
+      <noscript><p>JavaScript is off — email us directly at <a href="mailto:kelsey@bizlabs.ca">kelsey@bizlabs.ca</a>.</p></noscript>
+    </div>
   </div>
 </section>
 </div>
@@ -81,5 +118,6 @@
   <div><strong>BizLabs</strong><br><span class="draft">An automation team · Grande Prairie, Alberta</span></div>
   <div><a href="/services/">Services</a> · <a href="/blueprints/">Playbooks</a> · <a href="/decision-log/">Decision Log</a> · <a href="/about/">About</a><br><a href="mailto:kelsey@bizlabs.ca">kelsey@bizlabs.ca</a></div>
 </div></footer>
+<script src="/assets/js/main.js" defer></script>
 </body>
 </html>
