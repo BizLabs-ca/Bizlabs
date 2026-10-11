@@ -52,13 +52,6 @@ h1 .u{color:var(--accent)}
 .btn.ghost:hover{background:var(--ink); color:#fff}
 .hero .btn.ghost{color:#fff; border-color:rgba(255,255,255,.35)}
 .hero .btn.ghost:hover{border-color:#fff; background:rgba(255,255,255,.08)}
-/* ---- marquee ---- */
-.marquee{background:#fff; border-top:1px solid var(--line); border-bottom:1px solid var(--line); overflow:hidden; padding:13px 0}
-.marquee-track{display:inline-flex; white-space:nowrap; animation:mq 28s linear infinite; font-family:var(--mono); font-size:12.5px; letter-spacing:2px; color:var(--ink-soft)}
-.marquee-track span{padding:0 26px; position:relative}
-.marquee-track span::after{content:""; width:7px; height:7px; border-radius:50%; background:var(--accent); position:absolute; right:-3px; top:50%; transform:translateY(-50%)}
-@keyframes mq{to{transform:translateX(-50%)}}
-@media (prefers-reduced-motion:reduce){.marquee-track{animation:none}}
 /* ---- sections ---- */
 section.block{padding:60px 0}
 section.block.alt{background:var(--bg-soft)}
@@ -90,6 +83,11 @@ ul.check li::before{content:"✓"; position:absolute; left:8px; font-size:18px; 
 /* ---- contact form ---- */
 .contact-grid{display:grid; grid-template-columns:1fr 1.35fr; gap:44px; align-items:start}
 @media(max-width:780px){.contact-grid{grid-template-columns:1fr}}
+.form-card{background:#fff; border:1px solid var(--line); border-radius:18px; padding:34px 32px; box-shadow:0 12px 40px rgba(16,20,24,.08)}
+@media(max-width:520px){.form-card{padding:26px 22px}}
+.form-card .field label{font-family:var(--sans); font-size:14px; font-weight:600; letter-spacing:.2px; text-transform:none; color:var(--ink); margin-bottom:6px}
+.form-card .field input, .form-card .field select, .form-card .field textarea{border-radius:12px; padding:14px 16px}
+.btn-block{width:100%; margin-right:0; text-align:center; padding:15px 28px}
 .field{margin-bottom:15px}
 .field label{display:block; font-family:var(--mono); font-size:11px; letter-spacing:1.5px; color:var(--ink-soft); margin-bottom:7px; font-weight:700}
 .field input, .field select, .field textarea{width:100%; border:1.5px solid var(--line); border-radius:10px; padding:13px 15px; font-size:16px; font-family:var(--sans); background:#fff; color:var(--ink); transition:border-color .2s, box-shadow .2s}
