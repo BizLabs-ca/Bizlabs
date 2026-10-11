@@ -60,9 +60,14 @@
     btn.disabled = true;
     btn.textContent = 'Routing…';
 
+    var ctrl = ('AbortController' in window) ? new AbortController() : null;
+    var timer = null;
+    if (ctrl) { timer = setTimeout(function(){ ctrl.abort(); }, 30000); }
+
     fetch('https://formsubmit.co/ajax/kelsey@bizlabs.ca', {
       method: 'POST',
       headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+      signal: ctrl ? ctrl.signal : undefined,
       body: JSON.stringify({
         name: name, email: email, company: company,
         'busywork-level': pain, message: message,
@@ -70,7 +75,10 @@
         _template: 'table',
         _autoresponse: AUTOREPLY
       })
-    }).then(function(res){ return res.json(); }).then(function(data){
+    }).then(function(res){
+      if (timer) clearTimeout(timer);
+      return res.json();
+    }).then(function(data){
       if (data && (data.success === true || data.success === 'true')) {
         form.hidden = true;
         var ok = document.getElementById('form-success');
@@ -78,8 +86,12 @@
       } else {
         throw new Error((data && data.message) || 'send failed');
       }
-    }).catch(function(){
-      showError("Hmm — that didn't send. Email us directly at kelsey@bizlabs.ca and we'll take it from there.");
+    }).catch(function(err){
+      if (timer) clearTimeout(timer);
+      var msg = (err && err.name === 'AbortError')
+        ? "That took too long to send — please try again, or email us directly at kelsey@bizlabs.ca."
+        : "Hmm — that didn't send. Email us directly at kelsey@bizlabs.ca and we'll take it from there.";
+      showError(msg);
       btn.disabled = false;
       btn.textContent = 'Send it →';
     });
